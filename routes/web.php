@@ -27,5 +27,4 @@ Route::get('/', [BlogController::class, 'index']);
 Route::get('/about', [BlogController::class, 'about']);
 Route::get('/sample', [BlogController::class, 'sample']);
 Route::get('/contact', [BlogController::class, 'contact']);
-
-
+Route::post('/contact', [BlogController::class, 'contactForm']);

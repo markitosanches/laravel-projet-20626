@@ -16,6 +16,13 @@ class BlogController extends Controller
         return view('sample');
     }
     public function contact(){
-        return view('contact');
+        return view('contact', ['msg' => 'SVP completer le formulaire']);
     }
+    public function contactForm(Request $request){
+        //return $request->nom;
+         return view('contact', ['data'=> $request,
+                                 'msg' => 'Merci d\'avoir completé le formulaire'   
+                                 ]);
+    }
+
 }
