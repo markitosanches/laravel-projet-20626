@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class BlogController extends Controller
 {
@@ -24,5 +25,12 @@ class BlogController extends Controller
                                  'msg' => 'Merci d\'avoir completé le formulaire'   
                                  ]);
     }
-
+    public function testConnection(){
+        $con = DB::connection()->getPdo();
+            if($con){
+                return "connecté à la base de donnée ".DB::connection()->getDatabaseName();
+            }else{
+                return "No n'est pas connecté ! :(";
+            }
+    }
 }
